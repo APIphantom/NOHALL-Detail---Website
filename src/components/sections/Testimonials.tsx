@@ -9,7 +9,8 @@ import { testimonials } from "@/data/testimonials";
 
 export function Testimonials() {
   const [i, setI] = useState(0);
-  const t = testimonials[i];
+  const t = testimonials[i]!;
+
 
   return (
     <section className="grain py-24 lg:py-36">
