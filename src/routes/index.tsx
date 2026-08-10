@@ -1,24 +1,79 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
+import { Hero } from "@/components/sections/Hero";
+import { Introduction } from "@/components/sections/Introduction";
+import { Services } from "@/components/sections/Services";
+import { BeforeAfter } from "@/components/sections/BeforeAfter";
+import { Pricing } from "@/components/sections/Pricing";
+import { Stats } from "@/components/sections/Stats";
+import { Process } from "@/components/sections/Process";
+import { Team } from "@/components/sections/Team";
+import { Gallery } from "@/components/sections/Gallery";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { CTA } from "@/components/sections/CTA";
+import { Contact } from "@/components/sections/Contact";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Estética Automotiva Premium | Vértice Detailing Studio";
+const description =
+  "Polimento, revitalização, detailing e tratamentos automotivos premium. Transformamos cada detalhe do seu veículo.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AutoDetailing",
+          name: "Vértice Detailing Studio",
+          description,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Av. Marginal, 1200 — Galpão 04",
+            addressLocality: "São Paulo",
+            addressRegion: "SP",
+            addressCountry: "BR",
+          },
+          telephone: "+55 11 90000-0000",
+        }),
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <Introduction />
+        <Services />
+        <BeforeAfter />
+        <Pricing />
+        <Stats />
+        <Process />
+        <Team />
+        <Gallery />
+        <Testimonials />
+        <CTA />
+        <Contact />
+      </main>
+      <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
