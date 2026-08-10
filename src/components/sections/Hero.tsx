@@ -32,8 +32,9 @@ export function Hero() {
         transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_65%,transparent_0%,var(--background)_78%)]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/55 to-background/25" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_45%,transparent_0%,var(--background)_92%)] opacity-80" />
+
       <div className="absolute left-1/2 top-1/3 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-primary/12 blur-[140px]" />
 
       <Container className="relative z-10 pb-10 lg:pb-14">
