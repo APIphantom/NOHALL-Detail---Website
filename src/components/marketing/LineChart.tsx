@@ -35,7 +35,9 @@ export function LineChart({
       y: PAD.top + ih - ((d.value - min) / (max - min)) * ih,
     }));
     const path = points.map((p, i) => `${i === 0 ? "M" : "L"}${p.x},${p.y}`).join(" ");
-    const area = `${path} L${points[points.length - 1].x},${PAD.top + ih} L${points[0].x},${PAD.top + ih} Z`;
+    const last = points[points.length - 1]!;
+    const first = points[0]!;
+    const area = `${path} L${last.x},${PAD.top + ih} L${first.x},${PAD.top + ih} Z`;
     return { points, path, area, max, min };
   }, [data]);
 
