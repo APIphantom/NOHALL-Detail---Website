@@ -24,10 +24,10 @@ export const whatsappUrl = `https://wa.me/${site.whatsappNumber}?text=${encodeUR
 )}`;
 
 export const navLinks = [
-  { label: "Início", href: "#inicio" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Planos", href: "#planos" },
-  { label: "Resultados", href: "#resultados" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Contato", href: "#contato" },
+  { label: "Início", hash: "inicio" },
+  { label: "Serviços", hash: "servicos" },
+  { label: "Planos", hash: "planos" },
+  { label: "Resultados", hash: "resultados" },
+  { label: "Sobre", hash: "sobre" },
+  { label: "Contato", hash: "contato" },
 ];
