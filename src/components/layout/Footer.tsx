@@ -1,4 +1,5 @@
 import { Instagram, MessageCircle } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Container } from "@/components/ui/container";
 import { navLinks, site, whatsappUrl } from "@/data/site";
 
@@ -25,15 +26,24 @@ export function Footer() {
               <p className="eyebrow">Navegação</p>
               <ul className="mt-5 space-y-3">
                 {navLinks.map((l) => (
-                  <li key={l.href}>
-                    <a
-                      href={l.href}
+                  <li key={l.hash}>
+                    <Link
+                      to="/"
+                      hash={l.hash}
                       className="link-underline text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {l.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
+                <li>
+                  <Link
+                    to="/marketing"
+                    className="link-underline text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    Marketing
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
