@@ -100,7 +100,7 @@
   --input: rgba(245, 245, 245, 0.15);
   --ring: rgba(245, 245, 245, 0.6);
   --surface: var(--bg-secondary);
-  --surface-2: rgba(245, 245, 245, 0.025);
+  --surface-2: rgba(245, 245, 245, 0.045);
   --elevated: rgba(245, 245, 245, 0.025);
 }
 
@@ -145,6 +145,10 @@
     background-color: rgba(245, 245, 245, 0.025);
     border-color: rgba(245, 245, 245, 0.15);
     color: var(--text-primary);
+  }
+
+  main img {
+    filter: saturate(0.62) contrast(1.03);
   }
 
   input::placeholder,
@@ -216,5 +220,16 @@
   &:hover::after {
     transform: scaleX(1);
     transform-origin: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
