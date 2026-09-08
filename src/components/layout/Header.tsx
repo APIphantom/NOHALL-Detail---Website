@@ -31,7 +31,7 @@ export function Header() {
       <Container className="flex h-[72px] items-center justify-between gap-6 lg:h-20">
         <Link to="/" hash="inicio" className="flex min-w-0 items-center gap-2.5">
           <span className="h-4 w-[3px] shrink-0 bg-primary" />
-          <span className="truncate font-display text-lg font-bold tracking-[0.24em]">
+          <span className="truncate font-display text-lg font-light tracking-[0.24em]">
             {site.name}
           </span>
         </Link>
@@ -59,7 +59,7 @@ export function Header() {
           <Link
             to="/"
             hash="contato"
-            className="hidden rounded-sm bg-primary px-6 py-3 font-display text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-primary-foreground transition-colors hover:bg-primary-hover sm:inline-block"
+            className="hidden rounded-sm border border-primary bg-primary px-6 py-3 font-display text-[0.68rem] font-light uppercase tracking-[0.2em] text-primary-foreground transition-colors duration-300 hover:bg-transparent hover:text-primary sm:inline-block"
           >
             Agendar serviço
           </Link>
@@ -107,7 +107,7 @@ export function Header() {
                 to="/"
                 hash="contato"
                 onClick={() => setOpen(false)}
-                className="mt-5 rounded-sm bg-primary px-6 py-4 text-center font-display text-xs font-semibold uppercase tracking-[0.2em] text-primary-foreground"
+                className="mt-5 rounded-sm border border-primary bg-primary px-6 py-4 text-center font-display text-xs font-light uppercase tracking-[0.2em] text-primary-foreground transition-colors duration-300 hover:bg-transparent hover:text-primary"
               >
                 Agendar serviço
               </Link>
