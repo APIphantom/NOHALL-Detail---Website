@@ -38,10 +38,10 @@ export function Pricing() {
             <Reveal key={p.id} delay={i * 0.08} className="h-full">
               <article
                 className={cn(
-                  "relative flex h-full flex-col rounded-lg border bg-elevated p-7 transition-all duration-500 hover:-translate-y-1.5 lg:p-9",
+                  "relative flex h-full flex-col rounded-lg border bg-elevated p-7 transition-colors duration-300 hover:bg-surface-2 lg:p-9",
                   p.featured
-                    ? "border-primary/70 shadow-[0_30px_80px_-40px_var(--primary)]"
-                    : "border-border hover:border-primary/40",
+                    ? "border-primary/25"
+                    : "border-border hover:border-primary/25",
                 )}
               >
                 {p.badge && (
@@ -81,10 +81,10 @@ export function Pricing() {
                 <a
                   href="#contato"
                   className={cn(
-                    "mt-10 inline-flex items-center justify-center rounded-sm px-6 py-4 font-display text-[0.68rem] font-semibold uppercase tracking-[0.2em] transition-all duration-300",
+                    "mt-10 inline-flex items-center justify-center rounded-sm border px-6 py-4 font-display text-[0.68rem] font-light uppercase tracking-[0.2em] transition-colors duration-300",
                     p.featured
-                      ? "bg-primary text-primary-foreground hover:bg-primary-hover"
-                      : "border border-border text-foreground hover:border-primary hover:text-primary",
+                      ? "border-primary bg-primary text-primary-foreground hover:bg-transparent hover:text-primary"
+                      : "border-foreground/35 bg-transparent text-foreground hover:border-primary hover:bg-primary/8",
                   )}
                 >
                   {p.cta}

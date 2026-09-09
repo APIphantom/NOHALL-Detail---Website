@@ -6,8 +6,7 @@
   font-family: "BankGothicBT Light";
   src:
     local("BankGothicBT Light"),
-    local("Bank Gothic Light"),
-    url("/fonts/BankGothicBT-Light.woff2") format("woff2");
+    local("Bank Gothic Light");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -31,7 +30,6 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-primary-hover: var(--primary-hover);
   --color-primary-deep: var(--primary-deep);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -58,6 +56,11 @@
   --font-weight-medium: 300;
   --font-weight-semibold: 300;
   --font-weight-bold: 300;
+  --shadow-sm: 0 0 transparent;
+  --shadow-md: 0 0 transparent;
+  --shadow-lg: 0 0 transparent;
+  --shadow-xl: 0 0 transparent;
+  --shadow-2xl: 0 0 transparent;
 }
 
 :root {
@@ -85,7 +88,6 @@
   --popover-foreground: var(--text-primary);
   --primary: var(--brand-light);
   --primary-foreground: var(--brand-primary);
-  --primary-hover: transparent;
   --primary-deep: var(--border-strong);
   --secondary: rgba(245, 245, 245, 0.025);
   --secondary-foreground: var(--text-primary);
@@ -197,10 +199,6 @@
     var(--border) 80%,
     transparent
   );
-}
-
-@utility red-glow {
-  box-shadow: 0 0 40px -28px var(--brand-light);
 }
 
 @utility link-underline {
