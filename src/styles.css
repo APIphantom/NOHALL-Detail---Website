@@ -58,6 +58,11 @@
   --font-weight-medium: 300;
   --font-weight-semibold: 300;
   --font-weight-bold: 300;
+  --shadow-sm: 0 0 transparent;
+  --shadow-md: 0 0 transparent;
+  --shadow-lg: 0 0 transparent;
+  --shadow-xl: 0 0 transparent;
+  --shadow-2xl: 0 0 transparent;
 }
 
 :root {
