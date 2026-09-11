@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import heroCar from "@/assets/cta-car.jpg";
+import heroCar from "@/assets/cta-car-graded.jpg";
 import { Container } from "@/components/ui/container";
 import { ActionButton } from "@/components/ui/action-button";
 
@@ -22,7 +22,7 @@ export function MarketingHero() {
     >
       <motion.img
         src={heroCar}
-        alt="Ambiente escuro com iluminação vermelha representando a divisão de marketing"
+        alt="Ambiente automotivo escuro representando a divisão de marketing"
         fetchPriority="high"
         initial={{ scale: 1.12, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}

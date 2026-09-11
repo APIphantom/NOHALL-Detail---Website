@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import ctaCar from "@/assets/cta-car.jpg";
+import ctaCar from "@/assets/cta-car-graded.jpg";
 import { Container } from "@/components/ui/container";
 import { ActionButton } from "@/components/ui/action-button";
 import { whatsappUrl } from "@/data/site";
@@ -22,7 +22,7 @@ export function CTA() {
     >
       <motion.img
         src={ctaCar}
-        alt="Carro esportivo preto em ambiente escuro com iluminação vermelha"
+        alt="Carro esportivo preto em ambiente automotivo escuro"
         loading="lazy"
         style={{ y }}
         className="absolute inset-0 -z-10 h-[116%] w-full object-cover"

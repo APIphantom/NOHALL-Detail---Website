@@ -1,11 +1,11 @@
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import polimento from "@/assets/service-polimento.jpg";
-import interna from "@/assets/service-interna.jpg";
-import detailing from "@/assets/service-detailing.jpg";
-import after from "@/assets/after.jpg";
+import g1 from "@/assets/gallery-1-graded.jpg";
+import g2 from "@/assets/gallery-2-graded.jpg";
+import g3 from "@/assets/gallery-3-graded.jpg";
+import g4 from "@/assets/gallery-4-graded.jpg";
+import polimento from "@/assets/service-polimento-graded.jpg";
+import interna from "@/assets/service-interna-graded.jpg";
+import detailing from "@/assets/service-detailing-graded.jpg";
+import after from "@/assets/after-graded.jpg";
 
 export type GalleryCategory = "exterior" | "interior" | "polimento" | "detailing";
 

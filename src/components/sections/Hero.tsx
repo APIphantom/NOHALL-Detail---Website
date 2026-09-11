@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import heroCar from "@/assets/hero-car.jpg";
+import heroCar from "@/assets/hero-car-graded.jpg";
 import { Container } from "@/components/ui/container";
 import { ActionButton } from "@/components/ui/action-button";
 import { site } from "@/data/site";

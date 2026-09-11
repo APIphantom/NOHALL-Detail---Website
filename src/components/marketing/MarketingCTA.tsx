@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { ActionButton } from "@/components/ui/action-button";
-import ctaImg from "@/assets/gallery-3.jpg";
+import ctaImg from "@/assets/gallery-3-graded.jpg";
 import { whatsappUrl, site } from "@/data/site";
 
 export function MarketingCTA() {
@@ -9,7 +9,7 @@ export function MarketingCTA() {
     <section id="contato-marketing" className="relative overflow-hidden border-t border-border">
       <img
         src={ctaImg}
-        alt="Detalhe automotivo em iluminação vermelha"
+        alt="Detalhe automotivo em iluminação de estúdio"
         loading="lazy"
         className="absolute inset-0 h-full w-full object-cover"
       />

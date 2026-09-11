@@ -1,6 +1,6 @@
-import t1 from "@/assets/team-1.jpg";
-import t2 from "@/assets/team-2.jpg";
-import t3 from "@/assets/team-3.jpg";
+import t1 from "@/assets/team-1-graded.jpg";
+import t2 from "@/assets/team-2-graded.jpg";
+import t3 from "@/assets/team-3-graded.jpg";
 
 export type Member = {
   id: string;
