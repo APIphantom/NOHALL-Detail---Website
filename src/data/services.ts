@@ -1,7 +1,7 @@
-import polimento from "@/assets/service-polimento.jpg";
-import externa from "@/assets/service-externa.jpg";
-import interna from "@/assets/service-interna.jpg";
-import detailing from "@/assets/service-detailing.jpg";
+import polimento from "@/assets/service-polimento-graded.jpg";
+import externa from "@/assets/service-externa-graded.jpg";
+import interna from "@/assets/service-interna-graded.jpg";
+import detailing from "@/assets/service-detailing-graded.jpg";
 
 export type Service = {
   id: string;
