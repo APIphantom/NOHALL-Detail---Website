@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
@@ -12,13 +12,15 @@ type Props = {
 };
 
 export function Reveal({ children, className, delay = 0, y = 28 }: Props) {
+  const reduceMotion = useReducedMotion();
+
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y }}
+      initial={{ opacity: 0, y: reduceMotion ? 0 : y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.75, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: reduceMotion ? 0.01 : 0.75, delay: reduceMotion ? 0 : delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
     </motion.div>
@@ -42,13 +44,15 @@ export function ImageReveal({
   height?: number;
   priority?: boolean;
 }) {
+  const reduceMotion = useReducedMotion();
+
   return (
     <motion.div
       className={cn("overflow-hidden", className)}
-      initial={{ opacity: 0, scale: 1.06 }}
+      initial={{ opacity: 0, scale: reduceMotion ? 1 : 1.06 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: reduceMotion ? 0.01 : 1.1, ease: [0.16, 1, 0.3, 1] }}
     >
       <img
         src={src}

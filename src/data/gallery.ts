@@ -15,6 +15,8 @@ export type GalleryItem = {
   category: GalleryCategory;
   title: string;
   description: string;
+  width: number;
+  height: number;
 };
 
 export const galleryFilters: { id: "todos" | GalleryCategory; label: string }[] = [
@@ -32,6 +34,8 @@ export const gallery: GalleryItem[] = [
     category: "exterior",
     title: "Rodas e pinças",
     description: "Limpeza técnica de rodas com descontaminação ferrosa.",
+    width: 896,
+    height: 1200,
   },
   {
     id: "2",
@@ -39,6 +43,8 @@ export const gallery: GalleryItem[] = [
     category: "detailing",
     title: "Óptica e faróis",
     description: "Polimento de faróis e recuperação de transparência.",
+    width: 1152,
+    height: 928,
   },
   {
     id: "3",
@@ -46,6 +52,8 @@ export const gallery: GalleryItem[] = [
     category: "interior",
     title: "Cabine detalhada",
     description: "Detalhamento de painel, console e revestimentos.",
+    width: 928,
+    height: 1152,
   },
   {
     id: "4",
@@ -53,6 +61,8 @@ export const gallery: GalleryItem[] = [
     category: "exterior",
     title: "Perfil espelhado",
     description: "Correção de pintura com refino em dois estágios.",
+    width: 1376,
+    height: 768,
   },
   {
     id: "5",
@@ -60,6 +70,8 @@ export const gallery: GalleryItem[] = [
     category: "polimento",
     title: "Polimento técnico",
     description: "Remoção de hologramas e micro riscos.",
+    width: 928,
+    height: 1152,
   },
   {
     id: "6",
@@ -67,6 +79,8 @@ export const gallery: GalleryItem[] = [
     category: "interior",
     title: "Tratamento de couro",
     description: "Higienização e hidratação de bancos em couro.",
+    width: 928,
+    height: 1152,
   },
   {
     id: "7",
@@ -74,6 +88,8 @@ export const gallery: GalleryItem[] = [
     category: "polimento",
     title: "Brilho profundo",
     description: "Capô após correção completa da pintura.",
+    width: 1264,
+    height: 848,
   },
   {
     id: "8",
@@ -81,5 +97,7 @@ export const gallery: GalleryItem[] = [
     category: "detailing",
     title: "Studio session",
     description: "Inspeção final sob iluminação técnica.",
+    width: 928,
+    height: 1152,
   },
 ];

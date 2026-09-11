@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -11,6 +11,10 @@ import { cn } from "@/lib/utils";
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("inicio");
+  const headerRef = useRef<HTMLElement>(null);
+  const location = useLocation();
+  const onHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -19,8 +23,50 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname, location.hash]);
+
+  useEffect(() => {
+    if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    const onPointerDown = (event: PointerEvent) => {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) setOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (!onHome) return;
+    const sections = navLinks
+      .map((link) => document.getElementById(link.hash))
+      .filter((section): section is HTMLElement => Boolean(section));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible?.target.id) setActiveSection(visible.target.id);
+      },
+      { rootMargin: "-20% 0px -65%", threshold: [0, 0.2, 0.6] },
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [onHome]);
+
   return (
     <header
+      ref={headerRef}
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
         scrolled
@@ -42,14 +88,22 @@ export function Header() {
               key={l.hash}
               to="/"
               hash={l.hash}
-              className="link-underline font-display text-[0.7rem] font-medium uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground"
+              aria-current={onHome && activeSection === l.hash ? "location" : undefined}
+              className={cn(
+                "link-underline font-display text-[0.7rem] font-medium uppercase tracking-[0.2em] transition-colors hover:text-foreground",
+                onHome && activeSection === l.hash ? "text-foreground" : "text-muted-foreground",
+              )}
             >
               {l.label}
             </Link>
           ))}
           <Link
             to="/marketing"
-            className="link-underline font-display text-[0.7rem] font-medium uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground"
+            aria-current={!onHome ? "page" : undefined}
+            className={cn(
+              "link-underline font-display text-[0.7rem] font-medium uppercase tracking-[0.2em] transition-colors hover:text-foreground",
+              !onHome ? "text-foreground" : "text-muted-foreground",
+            )}
           >
             Marketing
           </Link>
@@ -90,14 +144,19 @@ export function Header() {
                   key={l.hash}
                   to="/"
                   hash={l.hash}
+                  aria-current={onHome && activeSection === l.hash ? "location" : undefined}
                   onClick={() => setOpen(false)}
-                  className="border-b border-border/60 py-4 font-display text-sm uppercase tracking-[0.18em] text-muted-foreground"
+                  className={cn(
+                    "border-b border-border/60 py-4 font-display text-sm uppercase tracking-[0.18em]",
+                    onHome && activeSection === l.hash ? "text-foreground" : "text-muted-foreground",
+                  )}
                 >
                   {l.label}
                 </Link>
               ))}
               <Link
                 to="/marketing"
+                aria-current={!onHome ? "page" : undefined}
                 onClick={() => setOpen(false)}
                 className="border-b border-border/60 py-4 font-display text-sm uppercase tracking-[0.18em] text-muted-foreground"
               >
