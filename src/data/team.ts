@@ -1,6 +1,6 @@
-import t1 from "@/assets/team-1-graded.jpg";
-import t2 from "@/assets/team-2-graded.jpg";
-import t3 from "@/assets/team-3-graded.jpg";
+import t1 from "@/assets/team/caue.png";
+import t2 from "@/assets/team/adriano.JPG";
+
 
 export type Member = {
   id: string;
@@ -10,7 +10,6 @@ export type Member = {
 };
 
 export const team: Member[] = [
-  { id: "1", name: "Rafael Menezes", role: "Especialista em Polimento", image: t1 },
-  { id: "2", name: "Diego Salles", role: "Especialista em Detailing", image: t2 },
-  { id: "3", name: "Marina Duarte", role: "Especialista em Higienização", image: t3 },
+  { id: "1", name: "Caue Soares", role: "CEO - Fundador", image: t1 },
+  { id: "2", name: "Adriano Oliveira", role: "CMO - Responsável pelo marketing", image: t2 },
 ];

@@ -161,7 +161,7 @@ export function Contact() {
                       Escolha o serviço
                     </option>
                     {serviceOptions.map((s) => (
-                      <option key={s} value={s}>
+                      <option key={s} value={s} className="text-black/20 bg-primary">
                         {s}
                       </option>
                     ))}
