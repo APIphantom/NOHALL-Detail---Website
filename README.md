@@ -19,14 +19,14 @@ A navegação principal e as chamadas para ação direcionam para as seções do
 | **TypeScript** | Tipagem de componentes, dados de conteúdo e configuração; o `tsconfig.json` ativa verificações estritas. |
 | **TanStack Start** | Estrutura full-stack baseada em React, com shell de aplicação, renderização e integração com o servidor. |
 | **TanStack Router** | Rotas por arquivo (`/` e `/marketing`), navegação e metadados específicos por página. |
-| **Vite 8** | Servidor de desenvolvimento e pipeline de build. A configuração usa o preset `@lovable.dev/vite-tanstack-config`. |
+| **Vite 8** | Servidor de desenvolvimento e pipeline de build, configurado diretamente com os plugins do framework. |
 | **Tailwind CSS 4** | Estilização utilitária e composição responsiva da identidade visual. |
 | **Radix UI** | Primitivos acessíveis usados pelos componentes de interface em `src/components/ui`. |
 | **Motion** | Recursos de animação e movimento da experiência. |
 | **TanStack Query** | Provider de consultas configurado no shell da aplicação para recursos que precisem de estado assíncrono. |
 | **Lucide React** | Ícones da interface. |
 | **ESLint e Prettier** | Lint e formatação do código. |
-| **Nitro** | Camada de servidor/build incluída pelo preset do TanStack Start/Lovable. |
+| **Nitro** | Camada de servidor/build para executar a aplicação SSR em ambientes compatíveis. |
 
 A escolha dessa stack permite compor uma interface de marketing em componentes React, manter os dados tipados e separar as rotas e o conteúdo sem introduzir um backend de negócio que o código atual não utiliza.
 
@@ -106,6 +106,8 @@ O repositório contém a aplicação de interface e seus dados de apresentação
 
 As informações de contato e localização são lidas da configuração da empresa em `src/data/site.ts`. Mantenha os metadados e dados estruturados das rotas alinhados com essa fonte ao alterar a marca ou o endereço.
 
+O setup de desenvolvimento foi migrado do preset conectado ao Lovable para uma configuração direta de Vite, TanStack Start, Tailwind CSS e Nitro. A integração de telemetria do editor foi removida. Os commits já publicados foram preservados; eles continuam documentando as etapas anteriores do projeto.
+
 ## Créditos
 
-O projeto utiliza a configuração de desenvolvimento Lovable com Vite e TanStack Start. O código da aplicação e os arquivos de conteúdo estão neste repositório.
+O código da aplicação, os componentes e os arquivos de conteúdo estão neste repositório. Consulte o histórico Git para acompanhar a evolução do projeto e suas ferramentas.
