@@ -79,13 +79,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Estética Automotiva Premium | Vértice Detailing Studio" },
+      { title: "Estética Automotiva Premium | Nohall Custom" },
       {
         name: "description",
         content:
           "Polimento, revitalização, detailing e tratamentos automotivos premium.",
       },
-      { property: "og:site_name", content: "Vértice Detailing Studio" },
+      { property: "og:site_name", content: "Nohall Custom" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

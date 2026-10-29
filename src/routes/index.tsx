@@ -15,7 +15,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { CTA } from "@/components/sections/CTA";
 import { Contact } from "@/components/sections/Contact";
 
-const title = "Estética Automotiva Premium | Vértice Detailing Studio";
+const title = "Estética Automotiva Premium | Nohall Custom";
 const description =
   "Polimento, revitalização, detailing e tratamentos automotivos premium. Transformamos cada detalhe do seu veículo.";
 
@@ -37,16 +37,16 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "AutoDetailing",
-          name: "Vértice Detailing Studio",
+          name: "Nohall Custom",
           description,
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Av. Marginal, 1200 — Galpão 04",
-            addressLocality: "São Paulo",
-            addressRegion: "SP",
+            streetAddress: "Rua Jurandir Diniz de Souza, n11, Jardim Montreal",
+            addressLocality: "Maringá",
+            addressRegion: "PR",
             addressCountry: "BR",
           },
-          telephone: "+55 11 90000-0000",
+          telephone: "+55 44 97695773",
         }),
       },
     ],

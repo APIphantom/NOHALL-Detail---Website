@@ -14,7 +14,7 @@ import { CaseStudies } from "@/components/marketing/CaseStudies";
 import { RoiCalculator } from "@/components/marketing/RoiCalculator";
 import { MarketingCTA } from "@/components/marketing/MarketingCTA";
 
-const title = "Marketing & Performance | Vértice";
+const title = "Marketing & Performance | Nohall Custom";
 const description =
   "Divisão de marketing e performance: estratégia, mídia paga, conteúdo, funis e dados para transformar atenção em crescimento mensurável.";
 
